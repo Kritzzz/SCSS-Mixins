@@ -1,9 +1,5 @@
-/* Variables */
-
 $base: #CD4B3F;
 
-
-/* Border Radius for rounded corners */
 
 @mixin border-radius($amount: 5px) {
   -moz-border-radius: $amount ;
@@ -11,17 +7,11 @@ $base: #CD4B3F;
   border-radius: $amount;
 }
 
-
-/* Box-Shadow */
-
 @mixin box-shadow($x: 0, $y: 4px, $rad: 0px, $color: black) {
   -moz-box-shadow: $x $y $rad $color;
   -webkit-box-shadow: $x $y $rad $color;
   box-shadow: $x $y $rad $color;
 } 
-
-
-/* CSS3 Transition properties */
 
 @mixin transition($what:all,$speed: 0.15s) {
   -moz-transition: $what $speed ease-in-out;
@@ -30,9 +20,6 @@ $base: #CD4B3F;
   -ms-transition: $what $speed ease-in-out;
   transition: $what $speed ease-in-out;
 }
-
-
-/* Border */
 
 @mixin border($thickness: 2px, $border-color: white) {
   -webkit-border: $thickness solid $border-color;
@@ -51,4 +38,12 @@ $base: #CD4B3F;
   -ms-animation: $name $duration $startsAfter $OpacityAfter $direction $type;
   -o-animation: $name $duration $startsAfter $OpacityAfter $direction $type;
   animation: $name $duration $startsAfter $OpacityAfter $direction $type;
+}
+
+@mixin transform ($transforms) {
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+      -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+          transform: $transforms;
 }
