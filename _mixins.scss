@@ -1,9 +1,9 @@
+/* Variables */
 
-$red: #CD4B3F; //#CD4B3F //#eb8552
-$orange: #eb8552;
-$green: #81CBAD; //rgb(161, 202, 55) rgb(172, 201, 56) rgb(151, 190, 66) rgb(149, 190, 60) #8BC53F #9DC151 79C0B2
-$blue-light: #75b7c1; //##178FBB #75b7c1
-$blue-dark: #178FBB;
+$base: #CD4B3F;
+
+
+/* Border Radius for rounded corners */
 
 @mixin border-radius($amount: 5px) {
   -moz-border-radius: $amount ;
@@ -11,10 +11,17 @@ $blue-dark: #178FBB;
   border-radius: $amount;
 }
 
-@mixin box-shadow($x: 0, $y: 4px, $rad: 0px, $color: $red) {
+
+/* Box-Shadow */
+
+@mixin box-shadow($x: 0, $y: 4px, $rad: 0px, $color: black) {
   -moz-box-shadow: $x $y $rad $color;
   -webkit-box-shadow: $x $y $rad $color;
-  box-shadow: $x $y $rad $color;} 
+  box-shadow: $x $y $rad $color;
+} 
+
+
+/* CSS3 Transition properties */
 
 @mixin transition($what:all,$speed: 0.15s) {
   -moz-transition: $what $speed ease-in-out;
@@ -24,6 +31,9 @@ $blue-dark: #178FBB;
   transition: $what $speed ease-in-out;
 }
 
+
+/* Border */
+
 @mixin border($thickness: 2px, $border-color: white) {
   -webkit-border: $thickness solid $border-color;
   -moz-border: $thickness solid $border-color;
@@ -32,60 +42,13 @@ $blue-dark: #178FBB;
   border: $thickness solid $border-color;
 }
 
+
+/* CSS Animations, mainly based on animate.css (http://daneden.me/animate/) */
+
 @mixin animation($name: fadeInLeft, $duration: 850ms,$startsAfter:0ms, $OpacityAfter: 1, $direction: forwards, $type: linear) {
   -webkit-animation: $name $duration $startsAfter $OpacityAfter $direction $type;
   -moz-animation: $name $duration $startsAfter $OpacityAfter $direction $type;
   -ms-animation: $name $duration $startsAfter $OpacityAfter $direction $type;
   -o-animation: $name $duration $startsAfter $OpacityAfter $direction $type;
   animation: $name $duration $startsAfter $OpacityAfter $direction $type;
-}
-
-@mixin colorize($thecolor: $red, $button-bg: $blue-dark, $social-hover: $red) {
-  h2 {
-    color: $thecolor;
-    &::-moz-selection {
-      color: $thecolor;
-    }
-    &::selection {
-      color: $thecolor;
-    }
-  }
-  a{color:$thecolor;}
-  .bringingcolorstothesite {
-    background-color: $thecolor;
-    .container {
-      button {
-        &.button-contact {
-          p {
-            color: $thecolor;
-            @include transition;
-          }
-          &:hover {
-            background-color: $button-bg;
-            p {color: $button-bg;}
-          }
-        }
-      }
-    }
-  }
-  footer {
-    .imprint {
-      a {
-        &:hover {
-          color: $thecolor;
-        }
-      }
-    }
-    .socials {
-      ul {
-        li {
-          a {
-            &:hover {
-            @include border($border-color: $social-hover);
-            }
-          }
-        }
-      }
-    }
-  }
 }
