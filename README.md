@@ -12,11 +12,12 @@ Usage
 Clone the git repo in your SASS/SCSS project. Use @import to make it available in your files.
 
     git clone https://github.com/Kritzzz/SCSS-Mixins.git
-    
-    // scss:
+
+Now import the mixins into the file you want to use them in
+
     @import '_mixins';
 
-
+That's it! :)
 
 License
 -------
