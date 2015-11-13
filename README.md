@@ -10,7 +10,7 @@ These are a couple of SCSS Mixins I use quite often. I will be updating and twea
 
 ### Changelog
 
-##### [1.0.0] - 2015-11-13
+##### [v1.0.0] - 2015-11-13
 ###### Additions
 - Completely restructured the way media queries are compiled. The new 'respond-to' mixin uses a sass-map, which should ideally live in a variables.scss file or config/framework of some sorts.
 - Added retina mixin
