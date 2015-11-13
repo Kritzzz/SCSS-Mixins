@@ -1,4 +1,4 @@
-## SCSS mixins for CSS3 
+## SCSS mixins
 
 
 ### About
@@ -8,19 +8,30 @@ If you use SCSS on a regular basis, you'll know that mixins are a great thing. S
 
 These are a couple of SCSS Mixins I use quite often. I will be updating and tweaking the list with more projects to come. 
 
-### Usage
+### Changelog
 
+##### [1.0.0] - 2015-11-13
+###### Additions
+- Completely restructured the way media queries are compiled. The new 'respond-to' mixin uses a sass-map, which should ideally live in a variables.scss file or config/framework of some sorts.
+- Added retina mixin
 
-Download the _mixins.scss file or clone the git repo in your SCSS project.
+###### Fixes & Changes
+- Removed all vendor-prefixes as this should be done by Autoprefixer and not a sass-mixin
+- Removed mixins for 
+	- border
+	- box-shadow
+	- transitions
+	- transforms
+	- linear gradients (this might come back soon)
+- Added tests for the compiled CSS
+- Rewrote the README.md
 
-    git clone https://github.com/Kritzzz/SCSS-Mixins.git
+##### [v0.1.0] - 2013-12-29
 
-Now import the mixins into the file you want to use them in (eg. 'main.scss').
+- Not really sure how I could publish this in the first place.
+- v0.1.0 was bad code and I should feel bad.
+- Sorry.
 
-    @import '_mixins';
-
-That's it! :-)
-
-#### License
+### License
 
 The code is free to use under the terms of the MIT license.

@@ -1,0 +1,40 @@
+@import "../_mixins.scss";
+
+/**
+*   Compiled using Autoprefixer
+*/
+
+.test__media-query {
+
+    @include respond-to(small) {
+        padding: 0;
+    }
+
+    @include respond-to(small, max-width) {
+        padding: 0;
+    }
+
+    //   This should result in a warning, but still compile correctly.
+
+    @include respond-to(200px) {
+        padding: 0;
+    }
+}
+
+.test__retina {
+    @include retina() {
+        background-image: url('image@2x.jpg');
+    }
+}
+
+.test__rotate {
+    @include rotate(390);
+}
+
+.test__columns {
+    @include columns(10em, 2, 2em);
+}
+
+.test__animation {
+    @include animation();
+}

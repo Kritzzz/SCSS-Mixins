@@ -1,0 +1,44 @@
+/**
+*   Compiled using Autoprefixer
+*/
+@media (min-width: 20em) {
+  .test__media-query {
+    padding: 0;
+  }
+}
+@media (max-width: 20em) {
+  .test__media-query {
+    padding: 0;
+  }
+}
+@media (min-width: 200px) {
+  .test__media-query {
+    padding: 0;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  .test__retina {
+    background-image: url("image@2x.jpg");
+  }
+}
+
+.test__rotate {
+  -webkit-transform: rotate(390deg);
+      -ms-transform: rotate(390deg);
+          transform: rotate(390deg);
+}
+
+.test__columns {
+  -webkit-columns: 10em 2;
+     -moz-columns: 10em 2;
+          columns: 10em 2;
+  -webkit-column-gap: 2em;
+     -moz-column-gap: 2em;
+          column-gap: 2em;
+}
+
+.test__animation {
+  -webkit-animation: fadeInLeft 850ms ease-in-out 0ms 1 normal both;
+          animation: fadeInLeft 850ms ease-in-out 0ms 1 normal both;
+}
