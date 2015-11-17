@@ -55,7 +55,7 @@ $breakpoints: (
 //  @author Harry Roberts, http://csswizardry.com/
 //--------------------------------------------------
 
-@mixin font-size($font-size, $line-height: auto) {
+@mixin font-size($font-size, $line-height: $line-height--base) {
     font-size: $font-size;
     font-size: ($font-size / $font-size--base) * 1rem;
 
