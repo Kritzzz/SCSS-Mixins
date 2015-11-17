@@ -1,4 +1,6 @@
-$base-font-size: 16 !default;
+$font-size--base: 16 !default;
+$line-height--base: 1.625 !default;
+
 $breakpoints: (
     small: 20em,
     middle: 35em,
@@ -34,6 +36,7 @@ $breakpoints: (
 
 }
 
+
 //----------------------
 //  Retina media query
 //----------------------
@@ -46,6 +49,35 @@ $breakpoints: (
     }
 }
 
+
+//--------------------------------------------------
+//  Font-size Mixin
+//  @author Harry Roberts, http://csswizardry.com/
+//--------------------------------------------------
+
+@mixin font-size($font-size, $line-height: auto) {
+    font-size: $font-size;
+    font-size: ($font-size / $font-size--base) * 1rem;
+
+    @if $line-height == auto {
+        line-height: ceil($font-size / $line-height--base) * ($line-height--base / $font-size);
+    }
+
+    @else {
+
+        @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+            line-height: $line-height;
+        }
+
+        @elseif ($line-height != none and $line-height != false) {
+            @warn "'#{$line-height}' is not a valid value for 'line-height'.";
+        }
+
+    }
+
+}
+
+
 //----------------------
 //  Rotating
 //----------------------
@@ -55,6 +87,7 @@ $breakpoints: (
     transform: (rotate(#{$degree}deg));
 }
 
+
 //----------------------
 //  Columns
 //----------------------
@@ -63,6 +96,7 @@ $breakpoints: (
     columns: $column-width $column-count;
     column-gap: $column-gap;
 }
+
 
 //----------------------
 // Animation mixin
