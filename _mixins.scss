@@ -23,8 +23,6 @@ $breakpoints: (
         and not unitless($breakpoint)
         and ((unit($breakpoint) == px) or (unit($breakpoint) == em)) {
 
-        @warn "While this will compile just fine, it's not good practice to declare new breakpoints inline, somwhere in your stylesheet. Use the SASS-map instead.";
-
         @media (#{$min-max}: #{$breakpoint}) {
             @content;
         }
@@ -49,43 +47,6 @@ $breakpoints: (
     }
 }
 
-
-//--------------------------------------------------
-//  Font-size Mixin
-//  @author Harry Roberts, http://csswizardry.com/
-//--------------------------------------------------
-
-@mixin font-size($font-size, $line-height: $line-height--base) {
-    font-size: $font-size;
-    font-size: ($font-size / $font-size--base) * 1rem;
-
-    @if $line-height == auto {
-        line-height: ceil($font-size / $line-height--base) * ($line-height--base / $font-size);
-    }
-
-    @else {
-
-        @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
-            line-height: $line-height;
-        }
-
-        @elseif ($line-height != none and $line-height != false) {
-            @warn "'#{$line-height}' is not a valid value for 'line-height'.";
-        }
-
-    }
-
-}
-
-
-//----------------------
-//  Rotating
-//----------------------
-
-
-@mixin rotate ($degree) {
-    transform: (rotate(#{$degree}deg));
-}
 
 
 //----------------------
